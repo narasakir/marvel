@@ -17,6 +17,11 @@ export const theme = {
         superLarge: '64px'
     },
     fontSize: {
+        tiny: '8px',
+        thin: '11px',
+        regular: '14px',
+        medium: '16px',
+        preLarge: '24px',
         large: '32px'
     }
 }

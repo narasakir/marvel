@@ -22,6 +22,21 @@ export const HeaderSubtitle = styled.h4`
 
 export const SearchContainer = styled.div`
     display: block;
-    margin: 0 auto ${({ theme }) => theme.space.regular};
+    margin: 0 auto ${({ theme }) => theme.space.large};
+    width: 720px;
+`
+
+export const CardContainer = styled.div`
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    column-gap: 48px;
+    row-gap: 24px;
     width: 960px;
+    margin: 0 auto;
+`
+
+export const Footer = styled.div`
+    display: block;
+    height: ${({ theme }) => theme.space.large};
+    background: ${({ theme }) => theme.color.red};
 `

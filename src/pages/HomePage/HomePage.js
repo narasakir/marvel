@@ -1,8 +1,9 @@
 import React from 'react'
 import { ReactComponent as MarvelLogo } from 'assets/logo/Group@1,5x.svg'
 import { Search } from 'components/Search'
+import { HeroCard } from 'components/HeroCard'
 
-import { Header, HeaderTitle, HeaderSubtitle, SearchContainer } from './HomePage.style'
+import { Header, HeaderTitle, HeaderSubtitle, SearchContainer, CardContainer, Footer } from './HomePage.style'
 
 export const HomePage = () => {
     return (
@@ -17,6 +18,17 @@ export const HomePage = () => {
             <SearchContainer>
                 <Search />
             </SearchContainer>
+
+            <CardContainer>
+                <HeroCard />
+                <HeroCard />
+                <HeroCard />
+                <HeroCard />
+                <HeroCard />
+                <HeroCard />
+            </CardContainer>
+
+            <Footer />
         </div>
     )
 }
