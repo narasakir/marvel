@@ -1,13 +1,15 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import GlobalStyle from 'utils/GlobalStyles'
 import { theme } from 'utils/theme'
-import { HomePage } from 'pages'
+import { Routes } from 'routes'
 
 
 const App = () => (
   <div>
     <ThemeProvider theme={theme}>
-      <HomePage />
+      <GlobalStyle />
+      <Routes />
     </ThemeProvider>
   </div>
 )

@@ -33,7 +33,7 @@ export const SearchContainer = styled(Container)`
 
 export const CardContainer = styled(Container)`
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 48px;
     row-gap: 24px;
     margin: 0 auto;

@@ -1,0 +1,1 @@
+export { LastReleasedCard } from './LastReleasedCard'

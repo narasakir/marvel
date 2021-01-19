@@ -1,8 +1,8 @@
 import React from 'react'
 import { SearchInput } from './Search.style'
 
-export const Search = () => {
+export const Search = ({ secondary }) => {
     return (
-        <SearchInput type='primary' placeholder='Procurar por heróis' />
+        <SearchInput secondary={secondary} placeholder='Procurar por heróis' />
     )
 }
