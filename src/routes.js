@@ -9,7 +9,7 @@ export const Routes = () => (
   <Router>
     <Switch>
       <Route exact path='/' component={HomePage} />
-      <Route path='/hero' component={HeroPage} />
+      <Route path='/hero/:heroId' component={HeroPage} />
     </Switch>
   </Router>
 )

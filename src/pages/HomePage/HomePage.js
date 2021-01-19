@@ -4,7 +4,7 @@ import { ReactComponent as Hearth } from 'assets/icones/heart/hearth-liked.svg'
 import { ReactComponent as Hero } from 'assets/icones/heroi/heroi.svg'
 
 import { Search } from 'components/Search'
-import { HeroCard } from 'components/HeroCard'
+import { HeroCardList } from 'components/HeroCardList'
 
 import { 
     Header, 
@@ -21,9 +21,8 @@ import {
 import { useHeroRequest } from 'hooks/useHeroRequest'
 
 export const HomePage = () => {
-    const { data } = useHeroRequest({ noEffects: false })
+    const { isFetched } = useHeroRequest({ noEffects: false })
 
-    console.log({data})
     return (
         <div>
             <Header>
@@ -56,12 +55,7 @@ export const HomePage = () => {
             </CardFiltersContainer>
 
             <CardContainer>
-                <HeroCard />
-                <HeroCard />
-                <HeroCard />
-                <HeroCard />
-                <HeroCard />
-                <HeroCard />
+               {isFetched && <HeroCardList />}
             </CardContainer>
 
             <Footer />

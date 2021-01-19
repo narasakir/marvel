@@ -7,12 +7,16 @@ import {
     FavoriteIcon
 } from './HeroCard.style'
 
-export const HeroCard = () => {
+export const HeroCard = ({ data }) => {
     return (
         <Card>
-            <CardImage src='https://dummyimage.com/200x200/000/fff' />
+            <CardImage 
+                src={`${data.thumbnail.path}.${data.thumbnail.extension}`} 
+                alt={`thumbnail ${data.name}`} 
+                title={data.name}
+            />
             <CardContent>
-                <CardName>Nome do Heroi</CardName>
+                <CardName to={`/hero/${data.id}`}>{data.name}</CardName>
                 <FavoriteIcon />
             </CardContent>
         </Card>

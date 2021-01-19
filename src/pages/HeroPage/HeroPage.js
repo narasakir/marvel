@@ -21,7 +21,6 @@ import {
     Title,
     Container
 } from './HeroPage.style'
-import { theme } from 'utils/theme'
 
 export const HeroPage = () => {
     return (

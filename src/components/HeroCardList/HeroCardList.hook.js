@@ -1,9 +1,13 @@
-import { useEffect, useCallback } from 'react'
+import { useContextConsumer } from 'context'
 
-export const useHeroCard = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+export const useHeroCardList = () => {
+    const [{
+        heroes: {
+          data
+        }
+      }] = useContextConsumer()
+
+    return {
+        cardList: data.results
+    }
 }
