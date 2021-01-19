@@ -1,5 +1,11 @@
 import styled from 'styled-components'
+import ToggleActive from 'assets/toggle/active.svg'
+import ToggleUnactive from 'assets/toggle/unactive.svg'
 
+export const Container = styled.div`
+    display: block;
+    width: 960px;
+`
 export const Header = styled.header`
     display: block;
     text-align: center;
@@ -20,18 +26,16 @@ export const HeaderSubtitle = styled.h4`
     margin-bottom: ${({ theme }) => theme.space.large};
 `
 
-export const SearchContainer = styled.div`
-    display: block;
+export const SearchContainer = styled(Container)`
     margin: 0 auto ${({ theme }) => theme.space.large};
     width: 720px;
 `
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(Container)`
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
     column-gap: 48px;
     row-gap: 24px;
-    width: 960px;
     margin: 0 auto;
 `
 
@@ -39,4 +43,31 @@ export const Footer = styled.div`
     display: block;
     height: ${({ theme }) => theme.space.large};
     background: ${({ theme }) => theme.color.red};
+`
+
+export const CardFiltersContainer = styled(Container)`
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: ${({ theme }) => theme.space.preLarge};
+`
+
+export const FiltersContainer = styled.div`
+    display: flex;
+`
+export const FilterText = styled.p`
+    display: flex;
+    align-items: center;
+    color: ${({ theme }) => theme.color.red};
+    font-size: ${({ theme }) => theme.fontSize.thin};
+    > svg {
+        margin-right: ${({ theme }) => theme.space.thin};
+    }
+`
+
+export const Toggle = styled.img`
+    background: url(${({ active }) => active ? ToggleActive : ToggleUnactive});
+    height: 40px;
+    width: 75px;
+    margin: 0 ${({ theme }) => theme.space.thin};
 `

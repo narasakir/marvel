@@ -13,6 +13,7 @@ export const theme = {
         thin: '12px',
         regular: '16px',
         medium: '24px',
+        preLarge: '36px',
         large: '48px',
         superLarge: '64px'
     },
