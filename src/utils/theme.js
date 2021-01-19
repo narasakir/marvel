@@ -13,7 +13,8 @@ export const theme = {
         thin: '12px',
         regular: '16px',
         medium: '24px',
-        large: '48px'
+        large: '48px',
+        superLarge: '64px'
     },
     fontSize: {
         large: '32px'

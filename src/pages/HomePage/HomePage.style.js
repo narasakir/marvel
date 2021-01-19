@@ -17,5 +17,11 @@ export const HeaderTitle = styled.h3`
 export const HeaderSubtitle = styled.h4`
     color: ${({ theme }) => theme.color.grey};
     font-weight: 400;
-    margin-bottom: ${({ theme }) => theme.space.thin};
+    margin-bottom: ${({ theme }) => theme.space.large};
+`
+
+export const SearchContainer = styled.div`
+    display: block;
+    margin: 0 auto ${({ theme }) => theme.space.regular};
+    width: 960px;
 `
