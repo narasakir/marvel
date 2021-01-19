@@ -18,8 +18,12 @@ import {
     FilterText,
     Toggle
 } from './HomePage.style'
+import { useHeroRequest } from 'hooks/useHeroRequest'
 
 export const HomePage = () => {
+    const { data } = useHeroRequest({ noEffects: false })
+
+    console.log({data})
     return (
         <div>
             <Header>
