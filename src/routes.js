@@ -4,12 +4,15 @@ import {
 } from 'react-router-dom'
 
 import { HomePage, HeroPage } from 'pages'
+import { HeroPageContextProvider } from 'pages/HeroPage/_context'
 
 export const Routes = () => (
   <Router>
     <Switch>
       <Route exact path='/' component={HomePage} />
-      <Route path='/hero/:heroId' component={HeroPage} />
+      <HeroPageContextProvider>
+        <Route path='/hero/:heroId' component={HeroPage} />
+      </HeroPageContextProvider>
     </Switch>
   </Router>
 )
