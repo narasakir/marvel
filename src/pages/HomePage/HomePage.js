@@ -19,9 +19,11 @@ import {
     Toggle
 } from './HomePage.style'
 import { useHeroRequest } from 'hooks/useHeroRequest'
+import { useSearchHero } from 'hooks/useSearchHero'
 
 export const HomePage = () => {
-    const { isFetched } = useHeroRequest({ noEffects: false })
+    const { isFetched, data } = useHeroRequest({ noEffects: false })
+    const { fetchData } = useSearchHero({ noEffects: true })
 
     return (
         <div>
@@ -33,31 +35,34 @@ export const HomePage = () => {
                 </HeaderSubtitle>
             </Header>
             <SearchContainer>
-                <Search />
+                <Search action={fetchData} />
             </SearchContainer>
 
+        {
+            isFetched && (
+                <>
+                    <CardFiltersContainer>
+                        <p>Encontrado {data.count} heróis</p>
+                        <FiltersContainer>
+                            <FilterText>
+                                <Hero /> Ordenar por nome - A/Z
+                            </FilterText>
 
+                        
+                            <Toggle />
 
-            <CardFiltersContainer>
-                <p>Encontrado X heróis</p>
-                <FiltersContainer>
-                    <FilterText>
-                        <Hero /> Ordenar por nome - A/Z
-                    </FilterText>
+                            <FilterText>
+                                <Hearth /> Somente favoritos
+                            </FilterText>
+                        </FiltersContainer>
+                    </CardFiltersContainer>
 
-                  
-                    <Toggle />
-
-                    <FilterText>
-                        <Hearth /> Somente favoritos
-                    </FilterText>
-                </FiltersContainer>
-            </CardFiltersContainer>
-
-            <CardContainer>
-               {isFetched && <HeroCardList />}
-            </CardContainer>
-
+                    <CardContainer>
+                    <HeroCardList />
+                    </CardContainer>
+                </>
+            )
+        }
             <Footer />
         </div>
     )

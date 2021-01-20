@@ -6,12 +6,12 @@ import {
     CardName
 } from './LastReleasedCard.style'
 
-export const LastReleasedCard = () => {
+export const LastReleasedCard = ({ data }) => {
     return (
         <Card>
             <CardImage src='https://dummyimage.com/115x140/000/fff' />
             <CardContent>
-                <CardName>Nome do Heroi</CardName>
+                <CardName>{data.name}</CardName>
             </CardContent>
         </Card>
     )

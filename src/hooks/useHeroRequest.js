@@ -18,7 +18,7 @@ export const useHeroRequest = ({ noEffects }) => {
   const fetchData = useCallback(async () => {
     dispatch(get())
     try {
-      const { data: response } = await getHeroes()
+      const { data: response } = await getHeroes('-modified')
 
       dispatch(success(response))
     } catch (fetchError) {

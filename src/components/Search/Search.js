@@ -1,8 +1,16 @@
-import React from 'react'
-import { SearchInput } from './Search.style'
+import React, { useState } from 'react'
+import { SearchInput, SearchContainer, ButtonSearch } from './Search.style'
 
-export const Search = ({ secondary }) => {
+export const Search = ({ secondary, action }) => {
+    const [value, setValue] = useState('')
     return (
-        <SearchInput secondary={secondary} placeholder='Procurar por heróis' />
+        <SearchContainer>
+            <SearchInput 
+                secondary={secondary} 
+                placeholder='Procurar por heróis'
+                onChange={e => setValue(e.target.value)}
+            />
+            <ButtonSearch onClick={() => action(value)}></ButtonSearch>
+        </SearchContainer>
     )
 }

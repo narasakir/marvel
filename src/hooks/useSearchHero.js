@@ -1,9 +1,9 @@
 import { useEffect, useCallback } from 'react'
 import { useContextConsumer } from 'context'
-import { get, success, errorAction } from './_context/actions'
-import { getHero } from 'services/heroes'
+import { getByName, success, errorAction } from 'context/actions/heroes'
+import { getHeroesByName } from 'services/heroes'
 
-export const useHeroDetailRequest = ({ noEffects, heroId }) => {
+export const useSearchHero = ({ noEffects }) => {
   const [{
     heroes: {
       isFetching,
@@ -15,10 +15,10 @@ export const useHeroDetailRequest = ({ noEffects, heroId }) => {
     }
   }, dispatch] = useContextConsumer()
 
-  const fetchData = useCallback(async () => {
-    dispatch(get(heroId))
+  const fetchData = useCallback(async (name) => {
+    dispatch(getByName())
     try {
-      const { data: response } = await getHero(heroId)
+      const { data: response } = await getHeroesByName(name)
 
       dispatch(success(response))
     } catch (fetchError) {

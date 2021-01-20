@@ -6,7 +6,6 @@ import { useHeroPageContextConsumer } from './_context'
 import { getHero } from 'services/heroes'
 
 export const useHeroPage = ({ noEffects, heroId }) => {
-    console.log({ heroId })
   const [{
     isFetching,
     isFetched,
