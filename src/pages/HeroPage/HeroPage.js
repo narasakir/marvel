@@ -2,6 +2,9 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ReactComponent as MarvelLogo } from 'assets/logo/Group@1,5x.svg'
 import { ReactComponent as Hearth } from 'assets/icones/heart/hearth-liked.svg'
+import { ReactComponent as Book } from 'assets/icones/book/book.svg'
+import { ReactComponent as Video } from 'assets/icones/video/video.svg'
+import Rating from 'assets/review/review.png'
 import { Search } from 'components/Search'
 import { useHeroPage } from './HeroPage.hook'
 import { 
@@ -39,7 +42,7 @@ export const HeroPage = () => {
                     </LogoContainer>
                 </Link>
                 <SearchContainer>
-                    <Search secondary action={fetchData}/>
+                    <Search secondary action={fetchData} />
                 </SearchContainer>
             </HeroPageHeaderContainer>
             {
@@ -55,14 +58,14 @@ export const HeroPage = () => {
                                     <InfoContainer>
                                         <Data>
                                             <Paragraph>Quantidade</Paragraph>
-                                            <i>icon</i> {data.comics.available}
+                                            <i><Book /></i> {data.comics.available}
                                         </Data>
                                         <Data>
                                             <Paragraph>Filmes</Paragraph>
-                                            <i>icon</i> {data.stories.available}
+                                            <i><Video /></i> {data.stories.available}
                                         </Data>
                                     </InfoContainer>
-                                    <Paragraph>Rating: stars</Paragraph>
+                                    <Paragraph>Rating: <img src={Rating} alt='rating' /></Paragraph>
                                     <Paragraph>Último Quadrinho: 13 fev. 2020</Paragraph>
                                 </HeroDetails>
                             </Content>

@@ -7,7 +7,7 @@ import {
     FavoriteIcon
 } from './HeroCard.style'
 
-export const HeroCard = ({ data }) => {
+export const HeroCard = ({ data, onSetIsFavorite, isFavorite }) => {
     return (
         <Card>
             <CardImage 
@@ -17,7 +17,7 @@ export const HeroCard = ({ data }) => {
             />
             <CardContent>
                 <CardName to={`/hero/${data.id}`}>{data.name}</CardName>
-                <FavoriteIcon />
+                <FavoriteIcon active={isFavorite} onClick={onSetIsFavorite}/>
             </CardContent>
         </Card>
     )

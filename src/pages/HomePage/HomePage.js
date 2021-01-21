@@ -20,10 +20,12 @@ import {
 } from './HomePage.style'
 import { useHeroRequest } from 'hooks/useHeroRequest'
 import { useSearchHero } from 'hooks/useSearchHero'
+import { useFilters } from 'hooks/useFilters'
 
 export const HomePage = () => {
     const { isFetched, data } = useHeroRequest({ noEffects: false })
     const { fetchData } = useSearchHero({ noEffects: true })
+    const { setOrderByName, orderByName, setShowOnlyFavorites } = useFilters()
 
     return (
         <div>
@@ -37,28 +39,29 @@ export const HomePage = () => {
             <SearchContainer>
                 <Search action={fetchData} />
             </SearchContainer>
+            <CardFiltersContainer>
+                {data && <p>Encontrado {data.count} heróis</p>}
+                <FiltersContainer>
+                    <FilterText>
+                        <Hero /> Ordenar por nome - A/Z
+                    </FilterText>
+
+                
+                    <Toggle active={orderByName} onClick={setOrderByName} />
+
+                    <FilterText onClick={setShowOnlyFavorites}>
+                        <Hearth /> Somente favoritos
+                    </FilterText>
+                </FiltersContainer>
+            </CardFiltersContainer>
 
         {
             isFetched && (
                 <>
-                    <CardFiltersContainer>
-                        <p>Encontrado {data.count} heróis</p>
-                        <FiltersContainer>
-                            <FilterText>
-                                <Hero /> Ordenar por nome - A/Z
-                            </FilterText>
-
-                        
-                            <Toggle />
-
-                            <FilterText>
-                                <Hearth /> Somente favoritos
-                            </FilterText>
-                        </FiltersContainer>
-                    </CardFiltersContainer>
+                    
 
                     <CardContainer>
-                    <HeroCardList />
+                        <HeroCardList />
                     </CardContainer>
                 </>
             )

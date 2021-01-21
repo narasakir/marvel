@@ -65,9 +65,10 @@ export const FilterText = styled.p`
     }
 `
 
-export const Toggle = styled.img`
-    background: url(${({ active }) => active ? ToggleActive : ToggleUnactive});
-    height: 40px;
-    width: 75px;
+export const Toggle = styled.div`
+    background: url(${({ active }) => active ? ToggleActive : ToggleUnactive}) no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 55px;
     margin: 0 ${({ theme }) => theme.space.thin};
 `
