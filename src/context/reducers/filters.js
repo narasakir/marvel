@@ -26,6 +26,6 @@ FiltersReducer.key = 'filters'
 
 FiltersReducer.initialState = {
   favorites: [],
-  orderByName: false,
+  orderByName: true,
   showOnlyFavorites: false
 }

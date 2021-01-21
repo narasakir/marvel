@@ -9,9 +9,9 @@ export const HeroCardList = () => {
     
     return showOnlyFavorites 
     ? cardList.filter(card => favorites.includes(card.id)).map(card => (
-        <HeroCard data={card} isFavorite={favorites.includes(card.id)} onSetIsFavorite={() => setIsFavorite(card.id)} />
+        <HeroCard data={card} key={card.id} isFavorite={favorites.includes(card.id)} onSetIsFavorite={() => setIsFavorite(card.id)} />
     )) 
     : cardList.map(card => (
-        <HeroCard data={card} isFavorite={favorites.includes(card.id)} onSetIsFavorite={() => setIsFavorite(card.id)} />
+        <HeroCard data={card} key={card.id} isFavorite={favorites.includes(card.id)} onSetIsFavorite={() => setIsFavorite(card.id)} />
     ))
 }

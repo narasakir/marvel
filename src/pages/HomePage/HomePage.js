@@ -16,6 +16,7 @@ import {
     CardFiltersContainer,
     FiltersContainer,
     FilterText,
+    FilterTextButton,
     Toggle
 } from './HomePage.style'
 import { useHeroRequest } from 'hooks/useHeroRequest'
@@ -46,26 +47,17 @@ export const HomePage = () => {
                         <Hero /> Ordenar por nome - A/Z
                     </FilterText>
 
-                
                     <Toggle active={orderByName} onClick={setOrderByName} />
 
-                    <FilterText onClick={setShowOnlyFavorites}>
+                    <FilterTextButton onClick={setShowOnlyFavorites}>
                         <Hearth /> Somente favoritos
-                    </FilterText>
+                    </FilterTextButton>
                 </FiltersContainer>
             </CardFiltersContainer>
 
-        {
-            isFetched && (
-                <>
-                    
-
-                    <CardContainer>
-                        <HeroCardList />
-                    </CardContainer>
-                </>
-            )
-        }
+            <CardContainer>
+            { isFetched && ( <HeroCardList /> ) }
+            </CardContainer>
             <Footer />
         </div>
     )
