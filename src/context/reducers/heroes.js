@@ -7,7 +7,8 @@ export const HeroesReducer = ({ heroes }, { type, payload }) => {
         ...heroes,
         isFetching: true,
         isFetched: false,
-        isError: false
+        isError: false,
+        data: []
       }
     case ACTION_TYPES.HEROES_REQUEST_SUCCESS:
       return {
@@ -23,6 +24,7 @@ export const HeroesReducer = ({ heroes }, { type, payload }) => {
         isFetching: false,
         isFetched: true,
         isError: true,
+        data: [],
         error: payload
       }
     default:
@@ -37,5 +39,5 @@ HeroesReducer.initialState = {
   isFetched: false,
   isError: false,
   error: null,
-  data: null
+  data: []
 }
