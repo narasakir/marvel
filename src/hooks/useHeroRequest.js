@@ -15,7 +15,7 @@ export const useHeroRequest = ({ noEffects }) => {
     }
   }, dispatch] = useContextConsumer()
 
-  const fetchData = useCallback(async (orderBy) => {
+  const fetchData = useCallback(async orderBy => {
     dispatch(get())
     try {
       const { data: response } = await getHeroes(orderBy)

@@ -1,5 +1,5 @@
 // globalStyles.js
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 import 'utils/fonts.css'
  
 const GlobalStyle = createGlobalStyle`
@@ -74,6 +74,6 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-`;
+`
  
-export default GlobalStyle;
+export default GlobalStyle

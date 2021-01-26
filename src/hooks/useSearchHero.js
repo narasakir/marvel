@@ -15,7 +15,7 @@ export const useSearchHero = ({ noEffects }) => {
     }
   }, dispatch] = useContextConsumer()
 
-  const fetchData = useCallback(async (name) => {
+  const fetchData = useCallback(async name => {
     dispatch(getByName())
     try {
       const { data: response } = await getHeroesByName(name)

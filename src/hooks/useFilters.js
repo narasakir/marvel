@@ -20,7 +20,7 @@ export const useFilters = () => {
         await fetchData(orderBy)
     }, [fetchData, orderByName, dispatch])
 
-    const setIsFavorite = useCallback((heroId) => {
+    const setIsFavorite = useCallback(heroId => {
         dispatch(setFavoriteAction(heroId))
     }, [dispatch])
 
