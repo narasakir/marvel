@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import breakpoints from 'utils/media'
 import ToggleActive from 'assets/toggle/active.svg'
 import ToggleUnactive from 'assets/toggle/unactive.svg'
 
 export const Container = styled.div`
     display: block;
-    width: 960px;
+    width: 100%;
+    max-width: 960px;
 `
 export const Header = styled.header`
     display: block;
@@ -28,15 +30,27 @@ export const HeaderSubtitle = styled.h4`
 
 export const SearchContainer = styled(Container)`
     margin: 0 auto ${({ theme }) => theme.space.large};
-    width: 720px;
+    max-width: 720px;
 `
 
 export const CardContainer = styled(Container)`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 48px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
     row-gap: 24px;
     margin: 0 auto;
+    padding: 0 ${({ theme }) => theme.space.thin};
+
+    ${breakpoints.sm`
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 24px;
+    `}
+
+    ${breakpoints.md`
+        padding: 0;
+        column-gap: 48px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    `}
 `
 
 export const Footer = styled.div`

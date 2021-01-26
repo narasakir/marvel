@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import breakpoints from 'utils/media'
 
 export const Container = styled.div`
-    width: 960px;
+    width: 100%;
+    max-width: 960px;
     margin: 0 auto;
 `
 export const Page = styled.div`
@@ -11,7 +13,7 @@ export const HeroPageHeaderContainer = styled(Container)`
     display: flex;
     margin-bottom: ${({ theme }) => theme.space.large};
     align-items: center;
-    width: 1280px;
+    max-width: 1280px;
 
 `
 export const LogoContainer = styled.div`
@@ -30,6 +32,12 @@ export const ContentContainer = styled(Container)`
     display: flex;
     justify-content: center;
     margin-bottom: ${({ theme }) => theme.space.large};
+    flex-direction: column-reverse;
+    padding: 24px ;
+    ${breakpoints.sm`
+        flex-direction: row;
+        padding: 0;
+    `}
 `
 export const Content = styled.div`
     display: block;
@@ -61,6 +69,8 @@ export const HeroDetails = styled.div`
 
 export const Image = styled.img`
     display: block;
+    width: 100%;
+    max-width: 450px;
 `
 
 export const InfoContainer = styled.div`
@@ -91,9 +101,22 @@ export const Title = styled.h4`
 
 export const LastReleasedContainer = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 48px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
     row-gap: 24px;
     margin: 0 auto;
     justify-content: center;
+
+    padding: 0 ${({ theme }) => theme.space.thin};
+
+    ${breakpoints.sm`
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 24px;
+    `}
+
+    ${breakpoints.md`
+        padding: 0;
+        column-gap: 48px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    `}
 `

@@ -4,11 +4,11 @@ import HearthUnliked from 'assets/icones/heart/hearth-unliked.svg'
 
 export const Card = styled.div`
     display: block;
-    max-width: 200px;
     margin-bottom: ${({ theme }) => theme.space.medium};
 `
 
 export const CardImage = styled.img`
+    width: 100%;
     display: block;
     border-bottom: 2px solid ${({ theme }) => theme.color.red};
 `
