@@ -9,7 +9,7 @@ Para rodar o projeto deve ter no mínimo a versão atual LTS do node v14.15.1
 
 ## Instalando / Installing
 
-Utilizamos o CLI do facebook [create-react-app](https://create-react-app.dev/docs/getting-started/), para criar uma estrutura básica já configurada de um projeto em react.
+Utilizei o CLI do facebook [create-react-app](https://create-react-app.dev/docs/getting-started/), para criar uma estrutura básica já configurada de um projeto em react.
 
 Para iniciar você deve clonar o repositório, entrar na pasta, rodar o comando para baixar as dependências do node package manager e em seguida subir um servidor local para desenvolvimento rodando em modo watch
 
@@ -59,11 +59,11 @@ Neste projeto construi componentes isolados e módulos que contém seu próprio 
     ├── config // Configurações do projeto
     ├── constants // Adicionar arquivos de constantes exemplo: HEROES.js
     ├── context // Flux - Está pasta pode ser utilizada em componentes para terem gerenciamento de estado no seu próprio contexto
-    │   ├── actions // Adicionar as Actions dos reducers. Ex: currency.js
-    │   └── reducers // Adicionar os Reducers Ex: currency.js 
+    │   ├── actions // Adicionar as Actions dos reducers. Ex: heroes.js
+    │   └── reducers // Adicionar os Reducers Ex: heroes.js 
     ├── hooks // Adicionar os custom hooks, Ex: useTag(), useScroll()
     ├── routes // Adicionar as rotas do projeto
-    ├── services // Adicionar os serviços que será feito request. Ex: suitability.js
+    ├── services // Adicionar os serviços que será feito request. Ex: heroes.js
     ├── shared // Adicionar arquivos compartilhados Ex: media.js, fonts.css, global-styles.css
     └── utils // Adicionar arquivos auxiliares. Ex: maths.js, formatters.js, date.js
 ```
@@ -80,8 +80,6 @@ Neste projeto construi componentes isolados e módulos que contém seu próprio 
 - [Axios](https://www.npmjs.com/package/axios) - bibliotecas para requests
 
 - [Eslint](https://www.npmjs.com/package/eslint) - Biblioteca para code-style 
-
-- [http-proxy-middleware](https://www.npmjs.com/package/http-proxy-middleware) - biblioteca para configurar o proxy para os services da aplicação.
 
 ### Deploying / Publishing
 Foi utilizado o github pages para disponibilizar a aplicação. O link para acesso: [https://narasakir.github.io/marvel/](https://narasakir.github.io/marvel/). 
