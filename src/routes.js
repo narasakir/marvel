@@ -7,7 +7,7 @@ import { HomePage, HeroPage } from 'pages'
 import { HeroPageContextProvider } from 'pages/HeroPage/_context'
 
 export const Routes = () => (
-  <Router>
+  <Router basename='/marvel'>
     <Switch>
       <Route exact path='/' component={HomePage} />
       <HeroPageContextProvider>
