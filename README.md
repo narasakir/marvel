@@ -1,3 +1,6 @@
+![CI/CD](https://github.com/narasakir/marvel/workflows/CI/CD/badge.svg)
+[![codecov](https://codecov.io/gh/narasakir/marvel/branch/master/graph/badge.svg)](https://codecov.io/gh/narasakir/marvel/)
+
 # Marvel Heroes
 > Essa aplicação é um Catálogo de heróis da marvel. 
 > Disponível no link: [https://narasakir.github.io/marvel/](https://narasakir.github.io/marvel/)  
