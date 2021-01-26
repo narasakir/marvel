@@ -8,6 +8,6 @@ export const useHeroCardList = () => {
       }] = useContextConsumer()
 
     return {
-        cardList: data.results
+        cardList: data.results || []
     }
 }
