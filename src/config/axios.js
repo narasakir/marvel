@@ -3,7 +3,7 @@ import * as nativeAxios from 'axios'
 const createAxios = () => {
   const axiosInstance = nativeAxios?.create
     ? nativeAxios.create({
-      baseURL: '/api'
+      baseURL: 'https://gateway.marvel.com/v1/public'
     })
     : nativeAxios
 
